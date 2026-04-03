@@ -3,7 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-dm-sans: "DM Sans", sans-serif;
+  --font-dm-sans: "DM Sans", "Segoe UI", Helvetica, Arial, sans-serif;
 }
 
 @theme inline {

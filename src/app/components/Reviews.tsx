@@ -2,6 +2,8 @@
 
 import Marquee from "react-fast-marquee";
 import Image from "next/image";
+import { useRef } from "react";
+import { useSectionReveal } from "./useSectionReveal";
 
 const reviews = [
   {
@@ -90,13 +92,20 @@ function ReviewCard({
 }
 
 export default function Reviews() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useSectionReveal(sectionRef);
+
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section ref={sectionRef} className="py-20 bg-white overflow-hidden">
       <div className="text-center mb-12 px-6">
-        <h2 className="text-4xl font-bold text-[#1E1E1E]">
+        <h2 data-gsap="heading" className="text-4xl font-bold text-[#1E1E1E]">
           Check Our Clients <span className="text-[#ED3C6A]">Review</span>
         </h2>
-        <p className="text-sm text-gray-500 max-w-2xl mx-auto mt-4">
+        <p
+          data-gsap="copy"
+          className="text-sm text-gray-500 max-w-2xl mx-auto mt-4"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -104,11 +113,13 @@ export default function Reviews() {
         </p>
       </div>
 
-      <Marquee gradient={false} speed={40} pauseOnHover className="">
-        {[...reviews, ...reviews].map((review, i) => (
-          <ReviewCard key={i} review={review} featured={i % 2 === 1} />
-        ))}
-      </Marquee>
+      <div data-gsap="item">
+        <Marquee gradient={false} speed={40} pauseOnHover className="">
+          {[...reviews, ...reviews].map((review, i) => (
+            <ReviewCard key={i} review={review} featured={i % 2 === 1} />
+          ))}
+        </Marquee>
+      </div>
     </section>
   );
 }

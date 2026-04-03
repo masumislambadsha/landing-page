@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
+import { useSectionReveal } from "./useSectionReveal";
 
 const faqs = [
   {
@@ -43,21 +44,24 @@ const teamImgs = [
 ];
 
 export default function FAQ() {
+  const sectionRef = useRef<HTMLElement>(null);
   const [openIndex, setOpenIndex] = useState(0);
 
+  useSectionReveal(sectionRef);
+
   return (
-    <section className="py-20 px-6 bg-white">
+    <section ref={sectionRef} className="py-20 px-6 bg-white">
       <div className="max-w-3xl mx-auto space-y-5">
         <div className="text-center mb-4">
-          <h2 className="text-4xl font-bold text-[#1E1E1E]">
+          <h2 data-gsap="heading" className="text-4xl font-bold text-[#1E1E1E]">
             Frequently asked <span className="text-[#ED3C6A]">questions</span>
           </h2>
-          <p className="text-sm text-gray-500 mt-3">
+          <p data-gsap="copy" className="text-sm text-gray-500 mt-3">
             Everything you need to know about the product and billing.
           </p>
         </div>
 
-        <div className="bg-[#F9FAFB] rounded-2xl px-8 py-6">
+        <div data-gsap="item" className="bg-[#F9FAFB] rounded-2xl px-8 py-6">
           {faqs.map((faq, i) => (
             <div key={i} className="border-b border-gray-200">
               <button
@@ -125,7 +129,10 @@ export default function FAQ() {
           ))}
         </div>
 
-        <div className="bg-[#F9FAFB] rounded-2xl py-10 px-6 flex flex-col items-center text-center gap-3">
+        <div
+          data-gsap="item"
+          className="bg-[#F9FAFB] rounded-2xl py-10 px-6 flex flex-col items-center text-center gap-3"
+        >
           <div className="flex -space-x-3">
             {teamImgs.map((src, i) => (
               <Image

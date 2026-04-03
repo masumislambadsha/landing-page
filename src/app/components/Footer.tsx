@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
+import { useRef } from "react";
+import { useSectionReveal } from "./useSectionReveal";
 
 const links = {
   Company: ["About", "Features", "Works", "Career"],
@@ -19,10 +23,14 @@ const links = {
 };
 
 export default function Footer() {
+  const footerRef = useRef<HTMLElement>(null);
+
+  useSectionReveal(footerRef);
+
   return (
-    <footer className="bg-white border-t border-gray-100">
+    <footer ref={footerRef} className="bg-white border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div className="flex flex-col gap-5">
+        <div data-gsap="item" className="flex flex-col gap-5">
           <Image
             src="/google.png"
             alt="Logo"
@@ -50,7 +58,7 @@ export default function Footer() {
         </div>
 
         {Object.entries(links).map(([title, items]) => (
-          <div key={title} className="flex flex-col gap-4">
+          <div key={title} data-gsap="item" className="flex flex-col gap-4">
             <h4 className="font-bold text-[#1E1E1E] text-base">{title}</h4>
             <ul className="flex flex-col gap-3">
               {items.map((item) => (
@@ -68,7 +76,7 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="bg-[#1E1B3A] py-4 px-10 text-center">
+      <div data-gsap="item" className="bg-[#1E1B3A] py-4 px-10 text-center">
         <p className="text-sm text-white/80">
           © Copyright 2024, All Rights Reserved by XYz
         </p>

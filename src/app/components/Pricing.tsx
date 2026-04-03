@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useSectionReveal } from "./useSectionReveal";
 
 const plans = [
   {
@@ -58,31 +59,40 @@ const plans = [
 ];
 
 export default function Pricing() {
+  const sectionRef = useRef<HTMLElement>(null);
   const [yearly, setYearly] = useState(false);
 
+  useSectionReveal(sectionRef);
+
   return (
-    <section className="py-20 px-6 bg-white">
+    <section ref={sectionRef} className="py-20 px-6 bg-white">
       <div className="text-center mb-4">
-        <h2 className="text-[40px] font-bold text-[#1E1E1E]">
-          Airnbn Assistent <span className="text-[#ED3C6A]">pricing</span>
+        <h2
+          data-gsap="heading"
+          className="text-[40px] font-bold text-[#1E1E1E]"
+        >
+          Airbnb Assistant <span className="text-[#ED3C6A]">pricing</span>
         </h2>
-        <p className="text-xl text-black mt-3">
+        <p data-gsap="copy" className="text-xl text-black mt-3">
           Choose a plan that&apos;s right for you
         </p>
       </div>
 
-      <div className="flex items-center justify-center gap-4 mt-6 mb-16 relative">
+      <div
+        data-gsap="item"
+        className="flex items-center justify-center gap-6 mt-8 mb-20 relative"
+      >
         <span
-          className={`text-sm font-medium ${!yearly ? "text-[#1E1E1E]" : "text-gray-400"}`}
+          className={`text-lg font-semibold transition-colors duration-300 ${!yearly ? "text-[#1E1E1E]" : "text-gray-400"}`}
         >
           Pay Monthly
         </span>
         <button
           onClick={() => setYearly(!yearly)}
-          className={`relative w-12 h-6 rounded-full transition-colors duration-300 ${yearly ? "bg-[#ED3C6A]" : "bg-gray-300"}`}
+          className={`relative w-[56px] h-[30px] rounded-full transition-colors duration-300 ${yearly ? "bg-[#ED3C6A]" : "bg-[#E5E7EB]"}`}
         >
           <span
-            className={`absolute top-1 w-4 h-4 bg-white rounded-full shadow transition-all duration-300 ${yearly ? "left-7" : "left-1"}`}
+            className={`absolute top-[3px] w-[24px] h-[24px] bg-white rounded-full shadow-md transition-all duration-300 ${yearly ? "left-[29px]" : "left-[3px]"}`}
           />
         </button>
         <span
@@ -91,7 +101,7 @@ export default function Pricing() {
           Pay Yearly
         </span>
 
-        <div className="absolute top-full mt-1 left-[52%] flex flex-col items-end">
+        <div className="absolute top-full mt-1 left-[52%] flex flex-row items-end">
           <Image
             src="/arrow.png"
             alt="arrow"
@@ -99,7 +109,7 @@ export default function Pricing() {
             height={50}
             className="object-contain"
           />
-          <span className="text-[#ED3C6A] text-sm font-medium -mt-1">
+          <span className="text-[#ED3C6A] text-sm pb-3 font-medium ">
             Save 25%
           </span>
         </div>
@@ -109,6 +119,7 @@ export default function Pricing() {
         {plans.map((plan) => (
           <div
             key={plan.name}
+            data-gsap="item"
             className={`relative rounded-2xl p-8 flex flex-col gap-5 group transition-all duration-500 hover:-translate-y-3 cursor-pointer overflow-hidden ${
               plan.highlight
                 ? "bg-[#ED3C6A] text-white"

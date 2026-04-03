@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { useRef } from "react";
+import { useSectionReveal } from "./useSectionReveal";
 
 const steps = [
   {
@@ -19,13 +23,20 @@ const steps = [
 ];
 
 export default function GettingStarted() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useSectionReveal(sectionRef);
+
   return (
-    <section className="py-20 px-6 bg-white">
+    <section ref={sectionRef} className="py-20 px-6 bg-white">
       <div className="text-center mb-20">
-        <h2 className="text-4xl font-bold text-[#1E1E1E]">
+        <h2 data-gsap="heading" className="text-4xl font-bold text-[#1E1E1E]">
           Getting Started is <span className="text-[#ED3C6A]">Easy</span>
         </h2>
-        <p className="text-sm text-gray-500 max-w-2xl mx-auto mt-4">
+        <p
+          data-gsap="copy"
+          className="text-sm text-gray-500 max-w-2xl mx-auto mt-4"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -35,7 +46,11 @@ export default function GettingStarted() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {steps.map((step, i) => (
-          <div key={i} className="flex flex-col items-center text-center gap-5">
+          <div
+            key={i}
+            data-gsap="item"
+            className="flex flex-col items-center text-center gap-5"
+          >
             <div
               className="relative w-full"
               style={{ paddingTop: "46px", paddingLeft: "46px" }}

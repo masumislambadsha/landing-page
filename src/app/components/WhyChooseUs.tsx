@@ -1,5 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useRef } from "react";
+import { useSectionReveal } from "./useSectionReveal";
 
 const reasons = [
   "Brilliant Client Service",
@@ -9,25 +13,32 @@ const reasons = [
 ];
 
 export default function WhyChooseUs() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useSectionReveal(sectionRef);
+
   return (
-    <section className="py-10 px-6 bg-white">
+    <section ref={sectionRef} className="py-10 px-6 bg-white">
       <div
         className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 rounded-[33px] px-12 py-12"
         style={{ background: "#FDEBF0", border: "1px solid #F8BECD" }}
       >
 
         <div className="flex-1 flex flex-col gap-6">
-          <h2 className="text-3xl font-bold text-[#1E1E1E] leading-snug">
+          <h2
+            data-gsap="heading"
+            className="text-3xl font-bold text-[#1E1E1E] leading-snug"
+          >
             Few Reasons Why you
             <br />
             Choose us?
           </h2>
-          <p className="text-sm text-black max-w-sm">
+          <p data-gsap="copy" className="text-sm text-black max-w-sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation
           </p>
-          <ul className="flex flex-col gap-3">
+          <ul data-gsap="item" className="flex flex-col gap-3">
             {reasons.map((r) => (
               <li
                 key={r}
@@ -50,6 +61,7 @@ export default function WhyChooseUs() {
           </ul>
           <Link
             href="#schedule"
+            data-gsap="item"
             className="w-fit bg-[#ED3C6A] text-white text-sm font-semibold px-6 py-3 rounded-[5px] hover:bg-[#d4305a] transition-colors flex items-center gap-2 mt-2"
           >
             Schedule A Meeting →
@@ -57,7 +69,7 @@ export default function WhyChooseUs() {
         </div>
 
       
-        <div className="flex-1 flex items-end justify-center">
+        <div data-gsap="item" className="flex-1 flex items-end justify-center">
           <Image
             src="/why_choose.png"
             alt="Why choose us"

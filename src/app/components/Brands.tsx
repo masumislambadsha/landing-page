@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import { useRef } from "react";
 import Marquee from "react-fast-marquee";
+import { useSectionReveal } from "./useSectionReveal";
 
 const logos = [
   { src: "/brands/Clip path group-1.svg", alt: "Brand 1" },
@@ -16,24 +18,36 @@ const logos = [
 const allLogos = [...logos, ...logos, ...logos];
 
 export default function Brands() {
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useSectionReveal(sectionRef);
+
   return (
-    <section className="py-6  bg-white border-t border-gray-100">
-      <p className="text-center text-[20px] font-semibold text-black mb-7 mt-[40px]">
+    <section
+      ref={sectionRef}
+      className="py-6 bg-white border-t border-gray-100"
+    >
+      <p
+        data-gsap="heading"
+        className="text-center text-[20px] font-semibold text-black mb-7 mt-[40px]"
+      >
         Trusted by leaders in 50+ industries
       </p>
-      <Marquee gradient={false} speed={50} className="bg-[#F6F6F6] py-5">
-        {allLogos.map((logo, i) => (
-          <div key={i} className="mx-10 flex items-center">
-            <Image
-              src={logo.src}
-              alt={logo.alt}
-              width={120}
-              height={40}
-             className="object-contain"
-            />
-          </div>
-        ))}
-      </Marquee>
+      <div data-gsap="item">
+        <Marquee gradient={false} speed={50} className="bg-[#F6F6F6] py-5">
+          {allLogos.map((logo, i) => (
+            <div key={i} className="mx-10 flex items-center">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={120}
+                height={40}
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </Marquee>
+      </div>
     </section>
   );
 }
