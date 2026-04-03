@@ -55,7 +55,6 @@ export default function Hero() {
       <span className="absolute z-20 top-[35%] right-[2%] w-2.5 h-2.5 rounded-full bg-[#EAB308]" />
       <span className="absolute z-20 top-[62%] right-[1.5%] w-2 h-2 rounded-full bg-[#1E1E1E]" />
 
-      {/* Floating icons animated via GSAP */}
       <div ref={iconsRef}>
         <div className="absolute top-[10%] left-[24%] z-20" style={iconShadow}>
           <Image
@@ -100,7 +99,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Center content */}
       <div
         className="relative z-10 flex flex-col items-center justify-center text-center px-4 py-24"
         style={{ background: "rgba(255,255,255,0.62)" }}
@@ -114,7 +112,7 @@ export default function Hero() {
         </h1>
         <p
           ref={subRef}
-          className="text-sm text-gray-500 md:max-w-[700px] font-medium mb-8"
+          className="text-sm text-black md:max-w-[700px] font-medium mb-8"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

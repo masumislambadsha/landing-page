@@ -101,13 +101,13 @@ export default function Pricing() {
           Pay Yearly
         </span>
 
-        <div className="absolute top-full mt-1 left-[52%] flex flex-row items-end">
+        <div className="absolute -top-[50%] mt-1 left-[58%] flex flex-row items-end">
           <Image
             src="/arrow.png"
             alt="arrow"
             width={78}
-            height={50}
-            className="object-contain"
+            height={90}
+            className="object-contain w-[100px]"
           />
           <span className="text-[#ED3C6A] text-sm pb-3 font-medium ">
             Save 25%

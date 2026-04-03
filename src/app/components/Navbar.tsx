@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <div
-      className="bg-white relative z-20"
+      className="bg-white z-670 sticky top-0"
       style={{ boxShadow: "0px 4px 62px 0px rgba(250, 196, 210, 0.63)" }}
     >
       <nav className="w-full container mx-auto flex items-center justify-between py-4  ">
@@ -33,7 +33,7 @@ export default function Navbar() {
                 onClick={() => setActive(link)}
                 className={`text-lg transition-colors ${
                   active === link
-                    ? "text-[#ED3C6A] font-bold border-b-2 border-[#ED3C6A] pb-0.5"
+                    ? "text-[#ED3C6A] font-bold border-b border-[#ED3C6A] pb-0.5"
                     : "text-[#1E1E1E] hover:text-[#ED3C6A]"
                 }`}
               >
@@ -45,7 +45,7 @@ export default function Navbar() {
 
         <Link
           href="#schedule"
-          className="bg-[#ED3C6A] text-white text-sm font-semibold px-[22px] py-[18px] rounded-[5px] hover:bg-[#d4305a] transition-colors flex items-center gap-2"
+          className="bg-[#ED3C6A] text-white text-sm font-bold px-5 py-4 rounded-[5px] hover:bg-[#d4305a] transition-colors flex items-center gap-2"
         >
           Schedule A Meeting <span>→</span>
         </Link>
