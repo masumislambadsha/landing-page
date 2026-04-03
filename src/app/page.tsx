@@ -6,6 +6,7 @@ import Tools from "./components/Tools";
 import GettingStarted from "./components/GettingStarted";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Reviews from "./components/Reviews";
+import FAQ from "./components/FAQ";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <GettingStarted />
       <WhyChooseUs />
       <Reviews />
+      <FAQ />
     </main>
   );
 }
