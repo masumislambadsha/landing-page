@@ -28,14 +28,14 @@ export default function GettingStarted() {
   useSectionReveal(sectionRef);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 bg-white">
-      <div className="text-center mb-20">
-        <h2 data-gsap="heading" className="text-4xl font-bold text-[#1E1E1E]">
+    <section ref={sectionRef} className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
+      <div className="text-center mb-12 sm:mb-20">
+        <h2 data-gsap="heading" className="text-3xl sm:text-4xl font-bold text-[#1E1E1E]">
           Getting Started is <span className="text-[#ED3C6A]">Easy</span>
         </h2>
         <p
           data-gsap="copy"
-          className="text-sm text-gray-500 max-w-2xl mx-auto mt-4"
+          className="text-sm sm:text-base text-black max-w-2xl mx-auto mt-4"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -44,7 +44,7 @@ export default function GettingStarted() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
         {steps.map((step, i) => (
           <div
             key={i}
@@ -53,17 +53,17 @@ export default function GettingStarted() {
           >
             <div
               className="relative w-full"
-              style={{ paddingTop: "46px", paddingLeft: "46px" }}
+              style={{ paddingTop: "40px", paddingLeft: "40px" }}
             >
-              <div className="absolute top-0 left-0 z-10 w-[82px] h-[82px] rounded-full bg-white border-[5px] border-[#ED3C6A] flex items-center justify-center">
-                <span className="text-3xl font-bold text-black">
+              <div className="absolute top-0 left-0 z-10 w-[72px] h-[72px] sm:w-[82px] sm:h-[82px] rounded-full bg-white border-[5px] border-[#ED3C6A] flex items-center justify-center">
+                <span className="text-2xl sm:text-3xl font-bold text-black">
                   {step.number}
                 </span>
               </div>
               <div
                 className="w-full bg-white flex items-center justify-center"
                 style={{
-                  height: "192px",
+                  height: "180px",
                   borderRadius: "9px",
                   border: "2px solid #FDEBF0",
                 }}
@@ -74,6 +74,7 @@ export default function GettingStarted() {
                   width={90}
                   height={90}
                   style={{ objectFit: "contain" }}
+                  className="w-[70px] sm:w-[90px] h-auto"
                 />
               </div>
             </div>

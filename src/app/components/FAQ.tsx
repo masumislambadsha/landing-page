@@ -50,25 +50,25 @@ export default function FAQ() {
   useSectionReveal(sectionRef);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 bg-white">
+    <section ref={sectionRef} className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
       <div className="max-w-3xl mx-auto space-y-5">
         <div className="text-center mb-4">
-          <h2 data-gsap="heading" className="text-4xl font-bold text-[#1E1E1E]">
+          <h2 data-gsap="heading" className="text-3xl sm:text-4xl font-bold text-[#1E1E1E]">
             Frequently asked <span className="text-[#ED3C6A]">questions</span>
           </h2>
-          <p data-gsap="copy" className="text-sm text-gray-500 mt-3">
+          <p data-gsap="copy" className="text-sm sm:text-base text-gray-500 mt-3">
             Everything you need to know about the product and billing.
           </p>
         </div>
 
-        <div data-gsap="item" className="bg-[#F9FAFB] rounded-2xl px-8 py-6">
+        <div data-gsap="item" className="bg-[#F9FAFB] rounded-2xl px-5 sm:px-8 py-5 sm:py-6">
           {faqs.map((faq, i) => (
             <div key={i} className="border-b border-gray-200">
               <button
                 onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
                 className="w-full flex items-center justify-between py-5 text-left"
               >
-                <span className="text-sm text-black font-bold">{faq.q}</span>
+                <span className="text-sm sm:text-base text-black font-bold">{faq.q}</span>
                 <span className="shrink-0 ml-4">
                   {openIndex === i ? (
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -121,7 +121,7 @@ export default function FAQ() {
                 </span>
               </button>
               {openIndex === i && (
-                <p className="text-sm text-gray-500 pb-5 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-500 pb-5 leading-relaxed">
                   {faq.a}
                 </p>
               )}
@@ -131,7 +131,7 @@ export default function FAQ() {
 
         <div
           data-gsap="item"
-          className="bg-[#F9FAFB] rounded-2xl py-10 px-6 flex flex-col items-center text-center gap-3"
+          className="bg-[#F9FAFB] rounded-2xl py-8 sm:py-10 px-5 sm:px-6 flex flex-col items-center text-center gap-3"
         >
           <div className="flex -space-x-3">
             {teamImgs.map((src, i) => (
@@ -145,10 +145,10 @@ export default function FAQ() {
               />
             ))}
           </div>
-          <p className="font-bold text-[#1E1E1E] text-base">
+          <p className="font-bold text-[#1E1E1E] text-base sm:text-lg">
             Still have Questions?
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm sm:text-base text-gray-500">
             Can&apos;t find the answer you&apos;re looking for? Please chat to
             our friendly team.
           </p>

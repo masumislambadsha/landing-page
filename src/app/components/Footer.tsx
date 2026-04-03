@@ -29,7 +29,7 @@ export default function Footer() {
 
   return (
     <footer ref={footerRef} className="bg-white border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-10 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12">
         <div data-gsap="item" className="flex flex-col gap-5">
           <Image
             src="/google.png"
@@ -39,7 +39,7 @@ export default function Footer() {
             style={{ objectFit: "contain" }}
             className="self-start"
           />
-          <p className="text-sm text-gray-500 leading-relaxed">
+          <p className="text-sm sm:text-base text-gray-500 leading-relaxed">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             dictum aliquet accumsan porta lectus ridiculus in mattis. Netus
             sodales in volutpat ullamcorper amet adipiscing fermentum.
@@ -65,7 +65,7 @@ export default function Footer() {
                 <li key={item}>
                   <Link
                     href="#"
-                    className="text-sm text-gray-500 hover:text-[#ED3C6A] transition-colors"
+                    className="text-sm sm:text-base text-gray-500 hover:text-[#ED3C6A] transition-colors"
                   >
                     {item}
                   </Link>

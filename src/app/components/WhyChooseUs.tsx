@@ -1,9 +1,10 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { useSectionReveal } from "./useSectionReveal";
+import { HiArrowRight } from "react-icons/hi";
 
 const reasons = [
   "Brilliant Client Service",
@@ -18,22 +19,19 @@ export default function WhyChooseUs() {
   useSectionReveal(sectionRef);
 
   return (
-    <section ref={sectionRef} className="py-10 px-6 bg-white">
+    <section ref={sectionRef} className="py-12 sm:py-16 px-4 sm:px-6 bg-white">
       <div
-        className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 rounded-[33px] px-12 py-12"
+        className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-10 rounded-[26px] sm:rounded-[33px] px-6 sm:px-10 lg:px-12 py-10 sm:py-12"
         style={{ background: "#FDEBF0", border: "1px solid #F8BECD" }}
       >
 
         <div className="flex-1 flex flex-col gap-6">
-          <h2
-            data-gsap="heading"
-            className="text-3xl font-bold text-[#1E1E1E] leading-snug"
-          >
+          <h2 data-gsap="heading" className="text-2xl sm:text-3xl font-bold text-[#1E1E1E] leading-snug">
             Few Reasons Why you
             <br />
             Choose us?
           </h2>
-          <p data-gsap="copy" className="text-sm text-black max-w-sm">
+          <p data-gsap="copy" className="text-sm sm:text-base text-black max-w-sm">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation
@@ -42,7 +40,7 @@ export default function WhyChooseUs() {
             {reasons.map((r) => (
               <li
                 key={r}
-                className="flex items-center gap-3 text-sm font-medium text-[#1E1E1E]"
+                className="flex items-center gap-3 text-sm sm:text-base font-medium text-[#1E1E1E]"
               >
                 <span className="w-7 h-7 rounded-full bg-[#FDCDD8] flex items-center justify-center shrink-0">
                   <svg width="12" height="10" viewBox="0 0 12 10" fill="none">
@@ -64,7 +62,7 @@ export default function WhyChooseUs() {
             data-gsap="item"
             className="w-fit bg-[#ED3C6A] text-white text-sm font-semibold px-6 py-3 rounded-[5px] hover:bg-[#d4305a] transition-colors flex items-center gap-2 mt-2"
           >
-            Schedule A Meeting →
+            Schedule A Meeting <HiArrowRight size={18} />
           </Link>
         </div>
 
@@ -76,6 +74,7 @@ export default function WhyChooseUs() {
             width={550}
             height={420}
             style={{ objectFit: "contain" }}
+            className="w-full max-w-[420px] sm:max-w-[480px] lg:max-w-[550px] h-auto"
           />
         </div>
       </div>

@@ -34,7 +34,7 @@ function ToolCard({
       data-gsap={animate ? "item" : undefined}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`bg-white rounded-xl flex items-center justify-center p-10 transition-all duration-300 cursor-pointer border-2 ${hovered ? "border-[#ED3C6A] -translate-y-1" : "border-transparent"}`}
+      className={`bg-white rounded-xl flex items-center justify-center p-7 sm:p-10 transition-all duration-300 cursor-pointer border-2 ${hovered ? "border-[#ED3C6A] -translate-y-1" : "border-transparent"}`}
       style={{ boxShadow: hovered ? hoverShadow : defaultShadow }}
     >
       <Image
@@ -43,6 +43,7 @@ function ToolCard({
         width={160}
         height={50}
         style={{ objectFit: "contain" }}
+        className="w-[120px] sm:w-[160px] h-auto"
       />
     </div>
   );
@@ -54,14 +55,14 @@ export default function Tools() {
   useSectionReveal(sectionRef);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6">
+    <section id="resources" ref={sectionRef} className="py-16 sm:py-20 px-4 sm:px-6">
       <div className="text-center mb-12">
-        <h2 data-gsap="heading" className="text-4xl font-bold text-[#1E1E1E]">
+        <h2 data-gsap="heading" className="text-3xl sm:text-4xl font-bold text-[#1E1E1E]">
           Our <span className="text-[#ED3C6A]">Tools</span>
         </h2>
         <p
           data-gsap="copy"
-          className="text-sm text-black font-medium max-w-2xl mx-auto mt-4"
+          className="text-sm sm:text-base text-black font-medium max-w-2xl mx-auto mt-4"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
@@ -70,8 +71,8 @@ export default function Tools() {
         </p>
       </div>
 
-      <div className="bg-[#F5F5F5] py-5">
-        <div className="grid grid-cols-3 gap-5 max-w-5xl mx-auto">
+      <div className="bg-[#F5F5F5] py-4 sm:py-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 max-w-5xl mx-auto">
           {tools.map((tool) => (
             <ToolCard
               key={tool.alt}

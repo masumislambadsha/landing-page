@@ -65,25 +65,25 @@ export default function Pricing() {
   useSectionReveal(sectionRef);
 
   return (
-    <section ref={sectionRef} className="py-20 px-6 bg-white">
+    <section id="pricing" ref={sectionRef} className="py-16 sm:py-20 px-4 sm:px-6 bg-white">
       <div className="text-center mb-4">
         <h2
           data-gsap="heading"
-          className="text-[40px] font-bold text-[#1E1E1E]"
+          className="text-3xl sm:text-[40px] font-bold text-[#1E1E1E]"
         >
           Airbnb Assistant <span className="text-[#ED3C6A]">pricing</span>
         </h2>
-        <p data-gsap="copy" className="text-xl text-black mt-3">
+        <p data-gsap="copy" className="text-base sm:text-xl text-black mt-3">
           Choose a plan that&apos;s right for you
         </p>
       </div>
 
       <div
         data-gsap="item"
-        className="flex items-center justify-center gap-6 mt-8 mb-20 relative"
+        className="relative mt-6 mb-16 flex flex-col items-center justify-center gap-4 sm:mt-8 sm:mb-20 sm:flex-row sm:gap-6"
       >
         <span
-          className={`text-lg font-semibold transition-colors duration-300 ${!yearly ? "text-[#1E1E1E]" : "text-gray-400"}`}
+          className={`text-base sm:text-lg font-semibold transition-colors duration-300 ${!yearly ? "text-[#1E1E1E]" : "text-gray-400"}`}
         >
           Pay Monthly
         </span>
@@ -95,13 +95,11 @@ export default function Pricing() {
             className={`absolute top-[3px] w-[24px] h-[24px] bg-white rounded-full shadow-md transition-all duration-300 ${yearly ? "left-[29px]" : "left-[3px]"}`}
           />
         </button>
-        <span
-          className={`text-sm font-medium ${yearly ? "text-[#1E1E1E]" : "text-gray-400"}`}
-        >
+        <span className={`text-sm font-medium ${yearly ? "text-[#1E1E1E]" : "text-gray-400"}`}>
           Pay Yearly
         </span>
 
-        <div className="absolute -top-[50%] mt-1 left-[58%] flex flex-row items-end">
+        <div className="absolute -top-[55%] left-[58%] hidden items-end sm:flex">
           <Image
             src="/arrow.png"
             alt="arrow"
@@ -115,7 +113,7 @@ export default function Pricing() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
         {plans.map((plan) => (
           <div
             key={plan.name}

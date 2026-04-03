@@ -65,7 +65,7 @@ function ReviewCard({
 }) {
   return (
     <div
-      className="mx-3 flex flex-col gap-4 p-6 rounded-2xl bg-white w-[280px] shrink-0"
+      className="mx-3 flex flex-col gap-4 p-6 rounded-2xl bg-white w-[240px] sm:w-[280px] shrink-0"
       style={{
         boxShadow: featured
           ? "0px 8px 40px 0px rgba(237,60,106,0.12)"
@@ -97,14 +97,14 @@ export default function Reviews() {
   useSectionReveal(sectionRef);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-white overflow-hidden">
+    <section id="blog" ref={sectionRef} className="py-16 sm:py-20 bg-white overflow-hidden">
       <div className="text-center mb-12 px-6">
-        <h2 data-gsap="heading" className="text-4xl font-bold text-[#1E1E1E]">
+        <h2 data-gsap="heading" className="text-3xl sm:text-4xl font-bold text-[#1E1E1E]">
           Check Our Clients <span className="text-[#ED3C6A]">Review</span>
         </h2>
         <p
           data-gsap="copy"
-          className="text-sm text-gray-500 max-w-2xl mx-auto mt-4"
+          className="text-sm sm:text-base text-black max-w-2xl mx-auto mt-4"
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
