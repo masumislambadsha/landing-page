@@ -21,7 +21,7 @@ export default function Hero() {
 
       <div className="absolute top-[10%] left-[24%] " style={iconShadow}>
         <Image
-          src="/left-top.png"
+          src="/hero-logo/left-top.png"
           alt="left top logo"
           width={100}
           height={100}
@@ -32,7 +32,7 @@ export default function Hero() {
         style={iconShadow}
       >
         <Image
-          src="/right-top.png"
+          src="/hero-logo/right-top.png"
           alt="right top logo"
           width={100}
           height={100}
@@ -43,7 +43,7 @@ export default function Hero() {
         style={iconShadow}
       >
         <Image
-          src="/V-logo.png"
+          src="/hero-logo/V-logo.png"
           alt="left bottom logo"
           width={90}
           height={90}
@@ -54,7 +54,7 @@ export default function Hero() {
         style={iconShadow}
       >
         <Image
-          src="/right-bottom.png"
+          src="/hero-logo/right-bottom.png"
           alt="right bottom logo"
           width={100}
           height={100}
