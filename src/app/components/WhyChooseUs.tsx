@@ -15,7 +15,7 @@ export default function WhyChooseUs() {
         className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 rounded-[33px] px-12 py-12"
         style={{ background: "#FDEBF0", border: "1px solid #F8BECD" }}
       >
-        {/* Left */}
+
         <div className="flex-1 flex flex-col gap-6">
           <h2 className="text-3xl font-bold text-[#1E1E1E] leading-snug">
             Few Reasons Why you
@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
           </Link>
         </div>
 
-        {/* Right — image */}
+      
         <div className="flex-1 flex items-end justify-center">
           <Image
             src="/why_choose.png"

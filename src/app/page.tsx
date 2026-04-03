@@ -5,6 +5,7 @@ import Pricing from "./components/Pricing";
 import Tools from "./components/Tools";
 import GettingStarted from "./components/GettingStarted";
 import WhyChooseUs from "./components/WhyChooseUs";
+import Reviews from "./components/Reviews";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Tools />
       <GettingStarted />
       <WhyChooseUs />
+      <Reviews />
     </main>
   );
 }
