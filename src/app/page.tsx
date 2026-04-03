@@ -3,6 +3,7 @@ import Brands from "./components/Brands";
 import Services from "./components/Services";
 import Pricing from "./components/Pricing";
 import Tools from "./components/Tools";
+import GettingStarted from "./components/GettingStarted";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Services />
       <Pricing />
       <Tools />
+      <GettingStarted />
     </main>
   );
 }

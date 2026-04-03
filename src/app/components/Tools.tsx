@@ -45,7 +45,7 @@ export default function Tools() {
         <h2 className="text-4xl font-bold text-[#1E1E1E]">
           Our <span className="text-[#ED3C6A]">Tools</span>
         </h2>
-        <p className="text-sm text-gray-500 max-w-2xl mx-auto mt-4">
+        <p className="text-sm text-black font-medium max-w-2xl mx-auto mt-4">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
