@@ -11,7 +11,7 @@ export default function Navbar() {
 
   return (
     <div
-      className="bg-white"
+      className="bg-white relative z-20"
       style={{ boxShadow: "0px 4px 62px 0px rgba(250, 196, 210, 0.63)" }}
     >
       <nav className="w-full container mx-auto flex items-center justify-between py-4  ">
