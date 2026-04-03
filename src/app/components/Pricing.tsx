@@ -120,7 +120,6 @@ export default function Pricing() {
                 : {}
             }
           >
-            {/* pink border glow for non-highlighted cards */}
             {!plan.highlight && (
               <span className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#ED3C6A] transition-all duration-500 pointer-events-none z-10" />
             )}
